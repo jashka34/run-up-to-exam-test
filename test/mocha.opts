@@ -1,0 +1,5 @@
+--ui bdd
+--recursive
+--require ts-node/register
+test/**/*.test.ts
+test/*.test.ts
