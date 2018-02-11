@@ -1,0 +1,15 @@
+.col,
+.col-sm-4
+{
+    background-color: lightgray;
+    border: 1px solid blue;
+    padding: 5px;
+}
+
+.container,
+.container-fluid
+{
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 10px;
+}

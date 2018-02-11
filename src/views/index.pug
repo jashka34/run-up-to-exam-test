@@ -1,0 +1,24 @@
+doctype html
+
+// variables mode="prod"
+
+html(lang="ru-RU")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+        <!-- bootstrap css -->
+        link(rel="stylesheet" href="bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet" href="css/main.css")
+
+    body
+
+        header 
+            div(class="container")
+                div(class="row")
+                    div(class="col-sm-4") 1
+                    div(class="col-sm-4") 2
+                    div(class="col-sm-4") 4
+
+        h3 А вот вам #{header}
+        p #{body}'s Pug source code!

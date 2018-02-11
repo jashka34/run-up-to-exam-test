@@ -8,17 +8,21 @@
     "url": "git@github.com:jashka34/run-up-to-exam-test.git"
   },
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "watch:pug": "node_modules/pug-cli/index.js -w --out src src/views/*.pug",
+    "start": "export NODE_ENV=dev && tsc && sh/postcompile.sh && node dist/index.js",
+    "compile": "tsc && sh/postcompile.sh",
     "test": "mocha",
     "nyan-test": "mocha -R nyan",
-    "watch:test": "mocha -r ts-node/register --watch test/**/*.test.ts --watch-extensions ts"
+    "watch:test": "export NODE_ENV=test && mocha -r ts-node/register --watch test/**/*.test.ts --watch-extensions ts"
   },
   "author": "Alexey Chernyadyev",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "express": "4.16.2",
     "kefir": "3.8.1",
-    "morgan": "1.9.0"
+    "morgan": "1.9.0",
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "@types/chai": "4.1.2",
@@ -26,9 +30,10 @@
     "@types/kefir": "3.7.0",
     "@types/mocha": "2.2.48",
     "@types/node": "9.4.1",
-    "chai": "4.1.2",
-    "chai-http": "3.0.0",
-    "mocha": "5.0.0",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^5.0.0",
+    "pug-cli": "^1.0.0-alpha6",
     "ts-node": "^4.1.0",
     "typescript": "^2.7.1"
   }
