@@ -20,6 +20,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "express": "4.16.2",
+    "jquery-slim": "^3.0.0",
     "kefir": "3.8.1",
     "morgan": "1.9.0",
     "pug": "^2.0.0-rc.4"

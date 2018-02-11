@@ -43,6 +43,7 @@ class Server {
       this.express.use(express.static(__dirname + '/public'));
       this.express.use('/css', express.static(__dirname + '/css'));
       this.express.use('/bootstrap', express.static(__dirname + '/bootstrap'));
+      this.express.use('/jquery-slim', express.static(__dirname + '/jquery-slim'));
       this.express.set('views',path.join(__dirname, 'views'));
       //this.express.engine('hbs', handlebars.engine());   
       this.express.set('view engine', 'pug');
