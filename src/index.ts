@@ -1,5 +1,4 @@
-import server from './Server'
-
+import server from './lib/Server'
 
 let port = 4400;
 
@@ -8,3 +7,4 @@ let port = 4400;
 console.log(`Server started on port ${port}`);
 
 server.listen(port);
+

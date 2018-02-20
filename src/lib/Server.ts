@@ -39,14 +39,21 @@ class Server {
   
     public config() {
 
-      console.log("dirname:",__dirname);
-      this.express.use(express.static(__dirname + '/public'));
-      this.express.use('/css', express.static(__dirname + '/css'));
-      this.express.use('/bootstrap', express.static(__dirname + '/bootstrap'));
-      this.express.use('/jquery-slim', express.static(__dirname + '/jquery-slim'));
-      this.express.set('views',path.join(__dirname, 'views'));
-      //this.express.engine('hbs', handlebars.engine());   
-      this.express.set('view engine', 'pug');
+        console.log("dirname:",__dirname);
+
+        let publicPath = path.resolve(__dirname, '..', 'public');
+        let viewsPath = path.resolve(publicPath, 'views');
+
+        console.log("publicPath:", publicPath);
+        console.log("viewsPath: ", viewsPath);
+
+        this.express.use(express.static(publicPath));
+        this.express.use('/css', express.static(publicPath + '/css'));
+        //this.express.use('/bootstrap', express.static(__dirname + '/bootstrap'));
+        //this.express.use('/jquery-slim', express.static(__dirname + '/jquery-slim'));
+        //this.express.engine('hbs', handlebars.engine());
+        this.express.set('views',viewsPath);
+        this.express.set('view engine', 'pug');
     }
   
     public routes() {
@@ -61,7 +68,7 @@ class Server {
 
       router.get('/', (req, res, next) => {
         
-        res.render('index', {
+        res.render('index.pug', {
           title : "12345",
           header: "Заголовок34",
           body: "Тело",
